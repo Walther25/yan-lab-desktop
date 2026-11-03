@@ -83,25 +83,25 @@ Cada columna del archivo corresponde a una de tus carpetas. En este ejemplo, la 
 ```
 .
 ├── src/
-│   ├── patches/             # Cambios sobre el fondo original (JSON) + manifest.json con las huellas SHA-256
-│   ├── overlay/             # Scripts y estilos que carga el fondo
-│   │   ├── desktop-archive.js       # Columnas del archivo y ficha de detalle
-│   │   ├── documents-explorer.js    # Explorador ARCHIVE INDEX
-│   │   ├── documents-explorer.css   # Todos los estilos agregados
-│   │   ├── planner.js               # Tareas y eventos
-│   │   └── wallpaper-switch.js      # Menú "Change to Background"
-│   ├── bridge/              # Yan Bridge: servidor local, editor del planner e (des)instaladores
-│   ├── backgrounds/         # Botón "↗ Yan Lab" y plantillas para fondos alternativos
+│   ├── patches/           # Cambios sobre el fondo original (JSON) + manifest.json con las huellas SHA-256
+│   ├── overlay/            # Scripts y estilos que carga el fondo
+│   │   ├── desktop-archive.js    # Columnas del archivo y ficha de detalle
+│   │   ├── documents-explorer.js   # Explorador ARCHIVE INDEX
+│   │   ├── documents-explorer.css  # Todos los estilos agregados
+│   │   ├── planner.js            # Tareas y eventos
+│   │   └── wallpaper-switch.js    # Menú "Change to Background"
+│   ├── bridge/           # Yan Bridge: servidor local, editor del planner e (des)instaladores
+│   ├── backgrounds/        # Botón "↗ Yan Lab" y plantillas para fondos alternativos
 │   │   ├── scene/
 │   │   └── video/
-│   └── script/              # Lo que se ejecuta
-│       ├── install.bat                  # 1) Instalación (doble clic)
-│       ├── Install-YanLab.ps1           #    Instalador completo
-│       └── New-YanLabBackground.ps1     # 2) Crear fondos alternativos
+│   └── script/            # Lo que se ejecuta
+│       ├── install.bat             # 1) Instalación (doble clic)
+│       ├── Install-YanLab.ps1        #    Instalador completo
+│       └── New-YanLabBackground.ps1    # 2) Crear fondos alternativos
 ├── docs/
-│   └── capturas/            # Imágenes del README
-├── ARQUITECTURA.md          # Cómo está construido por dentro
-├── SECURITY.md              # Qué puede y qué no puede hacer Yan Bridge
+│   └── capturas/        # Imágenes del README
+├── ARQUITECTURA.md        # Cómo está construido por dentro
+├── SECURITY.md          # Qué puede y qué no puede hacer Yan Bridge
 ├── THIRD-PARTY-NOTICES.md   # Créditos, licencias y qué no se incluye
 ├── README.md
 └── LICENSE
