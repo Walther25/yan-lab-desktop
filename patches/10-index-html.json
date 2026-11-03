@@ -1,0 +1,29 @@
+{
+  "target": "index.html",
+  "operations": [
+    {
+      "op": "replace",
+      "find": "<title>RHINE LAB · ANALYSIS OS</title>",
+      "replace": "<title>YAN LAB · ANALYSIS OS</title>",
+      "count": 1
+    },
+    {
+      "op": "replace",
+      "find": "content=\"Rhine Lab\"",
+      "replace": "content=\"Yan Lab\"",
+      "count": 1
+    },
+    {
+      "op": "replace",
+      "find": "content=\"Rhine Lab — Synthesize Information Analysis OS.",
+      "replace": "content=\"Yan Lab — Synthesize Information Analysis OS.",
+      "count": 1
+    },
+    {
+      "op": "replace",
+      "find": "<link rel=\"stylesheet\" crossorigin href=\"./assets/index-Bg7aiZZN.css\">\n",
+      "replace": "<link rel=\"stylesheet\" crossorigin href=\"./assets/index-Bg7aiZZN.css\">\n    <!-- Yan Lab Desktop overlay -->\n    <link rel=\"stylesheet\" href=\"./documents-explorer.css\">\n    <script src=\"./bridge-config.js\"></script>\n    <script defer src=\"./documents-explorer.js\"></script>\n    <script defer src=\"./desktop-archive.js\"></script>\n    <script defer src=\"./planner.js\"></script>\n    <script defer src=\"./wallpaper-switch.js\"></script>\n",
+      "count": 1
+    }
+  ]
+}

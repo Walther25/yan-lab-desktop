@@ -1,0 +1,18 @@
+{
+  "alpha": {
+    "script": "'use strict';\n\n/**\n * @param {Number} value (for property 'alpha')\n */\nexport function update(value) {\n\treturn value;\n}\n\n/**\n * Switches the wallpaper back to Yan Lab through the user shortcut 'yanlab'.\n * @param {CursorEvent} event\n */\nexport function cursorClick(event) {\n\tengine.openUserShortcut('yanlab');\n}\n",
+    "value": 1.0
+  },
+  "angles": "0.00000 0.00000 0.00000",
+  "color": "1.00000 1.00000 1.00000",
+  "id": 400,
+  "image": "models/yanlab_button.json",
+  "locktransforms": false,
+  "name": "Return to Yan Lab",
+  "origin": "343.12500 230.62500 0.00000",
+  "parallaxDepth": "0.00000 0.00000",
+  "scale": "0.56250 0.56250 1.00000",
+  "size": "512.00000 128.00000",
+  "solid": true,
+  "visible": true
+}
