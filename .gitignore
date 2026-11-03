@@ -1,0 +1,37 @@
+# --- Secrets and per-machine files (never commit) ---
+bridge-config.js
+token.txt
+roots.json
+planner.json
+wallpapers.json
+return-to-yanlab.vbs
+launch.vbs
+*.log
+*.lnk
+
+# --- Third-party content: the original wallpaper and generated backgrounds stay local ---
+/wallpaper/
+/build/
+/dist/
+yan-lab-*/
+*.pkg
+*.mp4
+*.webm
+*.glb
+*.woff
+*.woff2
+*.ogg
+*.wav
+
+# --- Backups, temp and OS files ---
+*.bak
+*.bak-*
+*.backup-*
+_backup*/
+*.tmp
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
