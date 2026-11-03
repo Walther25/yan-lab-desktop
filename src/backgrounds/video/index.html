@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
+  video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* Mismo botón que Reshiram y Samurai Girl: 512×128, 7,5 % del ancho, centrado en (8,94 %, 10,68 % desde abajo) */
+  #yanlab {
+    position: fixed; z-index: 2; width: 7.5vw; left: 5.1875vw; bottom: calc(10.677vh - 0.9375vw);
+    padding: 0; border: 0; background: none; cursor: pointer; line-height: 0;
+    transition: opacity .2s, transform .2s;
+  }
+  #yanlab img { width: 100%; height: auto; display: block; }
+  #yanlab:hover { transform: translateY(-1px); }
+  #yanlab:disabled { opacity: .6; cursor: default; }
+</style>
+</head>
+<body>
+<video id="v" src="{{VIDEO}}" autoplay loop muted playsinline preload="auto"></video>
+<button id="yanlab" type="button" aria-label="Return to Yan Lab"><img src="yanlab_button.png" alt="↗ Yan Lab"></button>
+<script src="bridge-config.js"></script>
+<script>
+(function () {
+  "use strict";
+  var v = document.getElementById("v");
+  var volume = 0;
+  function applyVolume() { v.volume = Math.max(0, Math.min(1, volume / 100)); v.muted = volume <= 0; }
+  function play() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+
+  // Propiedades y pausa de Wallpaper Engine
+  window.wallpaperPropertyListener = {
+    applyUserProperties: function (props) {
+      if (props.volume && typeof props.volume.value === "number") { volume = props.volume.value; applyVolume(); }
+    },
+    setPaused: function (paused) { if (paused) v.pause(); else play(); }
+  };
+  applyVolume();
+  play();
+
+  // Volver a Yan Lab mediante Yan Bridge (solo responde en este equipo)
+  var btn = document.getElementById("yanlab");
+  btn.addEventListener("click", function () {
+    var c = window.rhineBridgeConfig;
+    if (!c || !c.token) return;
+    btn.disabled = true;
+    var q = new URLSearchParams({ target: "yanlab", token: c.token });
+    fetch("http://127.0.0.1:" + c.port + "/api/wallpaper?" + q.toString(), { method: "POST", cache: "no-store", headers: { "Content-Type": "text/plain" }, body: "" })
+      .catch(function () {})
+      .finally(function () { setTimeout(function () { btn.disabled = false; }, 4000); });
+  });
+})();
+</script>
+</body>
+</html>

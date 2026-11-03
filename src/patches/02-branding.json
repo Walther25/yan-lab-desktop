@@ -1,0 +1,28 @@
+{
+  "target": "assets/index-DGZ5gDxu.js",
+  "operations": [
+    {
+      "op": "regex",
+      "pattern": "(?<!\\{text:\")RHINE LAB",
+      "replace": "YAN LAB"
+    },
+    {
+      "op": "replace",
+      "find": "Rhine Lab",
+      "replace": "Yan Lab",
+      "count": -1
+    },
+    {
+      "op": "replace",
+      "find": "RHINE·LAB",
+      "replace": "YAN·LAB",
+      "count": -1
+    },
+    {
+      "op": "replace",
+      "find": "${Xs(\"daily\")}",
+      "replace": "${Xs(\"daily\",\"YAN LAB / DAILY TERMINAL\")}",
+      "count": 1
+    }
+  ]
+}
